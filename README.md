@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# [MasterMind Vibes](https://fatbattk.github.io/game-mastermind/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A _vibe coding experiment_ with DeepSeek + Replit + Claude.
 
-Currently, two official plugins are available:
+<table>
+<tr><td valign="top">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- 🎮 Classic Mastermind gameplay
+- 🏆 Local high score tracking
+- 🔊 Sound effects
+- 📱 Responsive design for mobile and desktop
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## How to Play
 
-- Configure the top-level `parserOptions` property like this:
+1. The computer selects a secret code consisting of 4 colored emoji pegs
+2. You make guesses by selecting colors and placing them in the current row
+3. After each guess, you receive feedback:
+   - ⬛ Black peg: Right color in the right position
+   - ⬜ White peg: Right color in the wrong position
+4. Try to crack the code in 10 attempts or fewer
+5. Score more points by solving the puzzle quickly with fewer attempts
+</td><td valign="top">
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+![MasterMind Vibes](src/assets/screenshot.png)
+
+</td></tr>
+</table>
+
+## Development
+
+```bash
+# Install dependencies
+yarn
+
+# Start the development server
+yarn dev
+
+# Build for production
+yarn build
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Afterthoughts 💭
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Took 3+ hours (mostly AFK).
+- Claude 3.7-sonnet is expensive! $10+ used.
+- AI still not good at knowing what proper design is. Padding, alignments, etc.
+- Single word typo cost ~$3 and probably caused leftovers in code.
+- Great at adding code, but does not clean up after itself.
+- Had to reset at one point cause the frankenstein went rogue and telling AI to "audi and delete" did not help.
+- Unusually difficult to divert AI back to the intended path.
+- Thoughts: Not worth. Will vibe moar harder better next time. 💪🏻
