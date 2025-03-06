@@ -7,4 +7,12 @@ export default defineConfig({
     outDir: "dist",
     sourcemap: true,
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // Silence Sass deprecation warnings from dependencies
+        quietDeps: true,
+      },
+    },
+  },
 });
